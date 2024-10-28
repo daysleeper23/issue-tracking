@@ -1,6 +1,5 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { CaretDown, CaretRight, Icon } from '@phosphor-icons/react';
-import * as React from 'react';
 import ListMenuItem from './ListMenu';
 
 export interface ICollapsibleMenuProps {
