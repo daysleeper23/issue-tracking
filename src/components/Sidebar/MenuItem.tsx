@@ -8,7 +8,7 @@ export interface IMenuItemProps {
 
 export default function MenuItem ({ children, url }: IMenuItemProps) {
   return (
-    <Link className='flex items-center p-2 hover:bg-zinc-300 text-gray-800 gap-2 rounded-md' to={url}>
+    <Link className='block px-4 py-2 rounded hover:bg-zinc-100' to={url}>
       {children}
     </Link>
   );
