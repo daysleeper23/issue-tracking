@@ -9,6 +9,9 @@ import { Sidebar } from './components/Sidebar'
 import KanbanColumn from './components/TaskPage/Kanban/Column/KanbanColumn'
 import KanbanBoard from './components/TaskPage/Kanban/KanbanBoard'
 import { backlog, canceled, completed, inProgress, review, todo } from './lib/data'
+import InboxPage from './components/InboxPage'
+import MyTasksPage from './components/MyTasksPage'
+import DraftsPage from './components/DraftsPage'
 
 function App() {
 
@@ -25,10 +28,14 @@ function App() {
     <div className="flex h-screen bg-gray-200 p-2">
       <Sidebar />
       <div className="flex-1 flex flex-col overflow-hidden rounded-sm bg-white">
-        <div className="text-2xl font-bold p-4 border-b text-gray-800">
-          Kanban Board
-        </div>
-        <KanbanBoard columns={columns} />
+        <Routes>
+          <Route path="/inbox" element={<InboxPage />} />
+          <Route path="/my-tasks" element={<MyTasksPage />} />
+          <Route path="/drafts" element={<DraftsPage />} />
+          <Route path="/tasks" element={<TaskPage />} />
+          <Route path="/projects" element={<ProjectPage />} />
+          <Route path="/sprints" element={<SprintPage />} />
+        </Routes>
       </div>
     </div>
 
