@@ -1,5 +1,9 @@
 import KanbanBoard from './Kanban/KanbanBoard';
 import { backlog, canceled, completed, inProgress, review, todo } from '../../lib/data';
+import { Button } from '@headlessui/react';
+import { FunnelSimple, SlidersHorizontal } from '@phosphor-icons/react';
+import PageTitle from '../PageTitle';
+import FilterBar from '../FilterBar';
 
 export interface ITaskPageProps {
 }
@@ -16,9 +20,8 @@ const columns = [
 export function TaskPage (props: ITaskPageProps) {
   return (
     <>
-      <div className="text-2xl font-bold p-4 border-b text-gray-800">
-        Kanban Board
-      </div>
+      <PageTitle title='Issues' />
+      <FilterBar />
       <KanbanBoard columns={columns} />
     </>
   );
