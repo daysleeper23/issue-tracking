@@ -4,7 +4,7 @@ import PageTitle from '../PageTitle';
 export interface IMyTasksPageProps {
 }
 
-export default function MyTasksPage (props: IMyTasksPageProps) {
+export default function MyTasksPage (_props: IMyTasksPageProps) {
   return (
     <>
       <PageTitle title='My Tasks' />

@@ -27,7 +27,7 @@ const menuItemsWorkspace= [
   }
 ]
 
-export default function WorkspaceMenu (props: IWorkspaceMenuProps) {
+export default function WorkspaceMenu (_props: IWorkspaceMenuProps) {
 
   return (
     <CollapsibleMenu title="Workspace" items={menuItemsWorkspace} />

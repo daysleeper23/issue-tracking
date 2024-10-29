@@ -22,7 +22,7 @@ const menuItemsPrimary= [
   }
 ]
 
-export default function PrimaryMenu (props: IPrimaryMenuProps) {
+export default function PrimaryMenu (_props: IPrimaryMenuProps) {
 
   return (
     <CollapsibleMenu title="Exploring" items={menuItemsPrimary} />

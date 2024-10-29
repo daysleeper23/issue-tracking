@@ -4,7 +4,7 @@ import FilterBar from '../FilterBar';
 export interface IProjecPageProps {
 }
 
-export default function ProjectPage (props: IProjecPageProps) {
+export default function ProjectPage (_props: IProjecPageProps) {
   return (
     <>
       <PageTitle title='Projects' />

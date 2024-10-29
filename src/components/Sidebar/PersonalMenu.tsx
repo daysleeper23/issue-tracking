@@ -22,7 +22,7 @@ const menuItemsPersonal = [
   }
 ]
 
-export default function PersonalMenu (props: IPersonalMenuProps) {
+export default function PersonalMenu (_props: IPersonalMenuProps) {
   
   return (
     <ListMenu items={menuItemsPersonal} />

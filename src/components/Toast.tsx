@@ -1,9 +1,7 @@
-import * as React from 'react';
-
 export interface IToastProps {
 };
 
-export function Toast (props: IToastProps) {
+export function Toast (_props: IToastProps) {
   return (
     <div>
       {/* <Header />> */}

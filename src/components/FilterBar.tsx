@@ -4,7 +4,7 @@ import { FunnelSimple, SlidersHorizontal } from "@phosphor-icons/react";
 export interface IFilterBarProps {
 }
 
-export default function FilterBar (props: IFilterBarProps) {
+export default function FilterBar (_props: IFilterBarProps) {
   return (
     <div className="px-6 py-2 border-b text-zinc-700 flex justify-between">
       <Button className='text-xs font-medium px-2 py-1 rounded hover:bg-zinc-100 flex gap-2'>

@@ -1,13 +1,14 @@
-import * as React from 'react';
 import PageTitle from '../PageTitle';
+import FilterBar from '../FilterBar';
 
 export interface IInboxPageProps {
 }
 
-export default function InboxPage (props: IInboxPageProps) {
+export default function InboxPage (_props: IInboxPageProps) {
   return (
-    <div className="flex-1 flex flex-col overflow-hidden rounded-sm bg-white">
+    <>
       <PageTitle title='Inbox' />
-    </div>
+      <FilterBar />
+    </>
   );
 }
