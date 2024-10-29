@@ -17,7 +17,7 @@ interface DropResult {
 }
 
 export default function KanbanCard ({ task }: IKanbanCardProps) {
-  const [{ isDragging }, drag, dragPreview] = useDrag(() => ({
+  const [{ isDragging }, drag] = useDrag(() => ({
     type: 'card',
     item: { task },
     end: (item, monitor) => {

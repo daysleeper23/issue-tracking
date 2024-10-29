@@ -13,7 +13,7 @@ export interface ICollapsibleMenuProps {
 
 export default function CollapsibleMenu ({ title, items }: ICollapsibleMenuProps) {
   return (
-    <Disclosure>
+    <Disclosure defaultOpen={true}>
       {({ open }) => (
         <>
           <DisclosureButton className="w-full px-2 py-2 text-left text-zinc-600 flex gap-2 items-center rounded hover:bg-zinc-100">

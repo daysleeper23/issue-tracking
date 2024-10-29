@@ -9,3 +9,4 @@ An issue tracking app using Typescript & TailwindCSS
 | Styling Kanban Board & dependent components   | 4 hrs         |
 | Implement drag & drop task in Kanban Board    | 2 hrs         |
 | Refactoring Sidebar: Implement dynamic menu   | 2 hrs         |
+| KanbanBoard: optimization for large dataset   | 2 hrs         |

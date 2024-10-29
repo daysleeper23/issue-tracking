@@ -71,7 +71,7 @@ function generateRandomTask(id: number): ITask {
   };
 }
 
-// Generate an array of 50 random tasks
+// Generate an array of 100 random tasks
 export const tasks = Array.from({ length: 100 }, (_, i) => generateRandomTask(i + 1));
 export const todo = tasks.filter(task => task.status === 'Todo');
 export const inProgress = tasks.filter(task => task.status === 'In Progress');

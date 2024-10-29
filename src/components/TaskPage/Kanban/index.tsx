@@ -6,6 +6,7 @@ import { DndProvider } from 'react-dnd'
 export interface IKanbanBoardProps {
   columns: {
     title: string;
+    value: string;
     tasks: ITask[];
   }[];
 }

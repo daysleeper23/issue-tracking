@@ -1,5 +1,5 @@
 import { Icon } from "@phosphor-icons/react";
-import MenuItem from "./MenuItem";
+import MenuItem from "../MenuItem";
 
 export interface IListMenuProps {
   items: Array<{

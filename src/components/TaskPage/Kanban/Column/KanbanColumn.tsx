@@ -4,6 +4,7 @@ import KanbanColumnTitle from './KanbanColumnTitle';
 import TaskStatus from '../../Properties/TaskStatus';
 import { useDrop } from 'react-dnd';
 import clsx from 'clsx';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export interface IKanbanColumnProps {
   column: {
@@ -12,7 +13,50 @@ export interface IKanbanColumnProps {
   };
 }
 
+const PAGE_SIZE = 20; // Number of items to load per "page"
+
 export default function KanbanColumn ({ column }: IKanbanColumnProps) {
+
+  const [visibleTasks, setVisibleTasks] = useState(column.tasks.slice(0, PAGE_SIZE));
+  const [page, setPage] = useState(0);
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  //calculate max page for each column
+  const maxPage = Math.ceil(column.tasks.length / PAGE_SIZE);
+
+  // Load more items when user reaches the end
+  const loadMoreTasks = useCallback(() => {
+    const start = page * PAGE_SIZE;
+    const end = start + PAGE_SIZE;
+    setVisibleTasks((prevTasks) => [
+      ...prevTasks,
+      ...column.tasks.slice(start, end)
+    ]);
+    setPage((prevPage) => prevPage + 1);
+  }, [page, column.tasks]);
+
+  // Set up an intersection observer to detect when the last item is visible
+  const observerCallback = useCallback((entries: IntersectionObserverEntry[]) => {
+    const [entry] = entries;
+    if (entry.isIntersecting) {
+      loadMoreTasks();
+    }
+  }, [loadMoreTasks]);
+
+  useEffect(() => {
+    if (observerRef.current) 
+      observerRef.current.disconnect();
+    
+    observerRef.current = new IntersectionObserver(observerCallback);
+    
+    const target = document.getElementById(`infinite-scroll-trigger-${column.title}`);
+    if (target) 
+      observerRef.current.observe(target);
+    
+    return () => {
+      if (observerRef.current) observerRef.current.disconnect();
+    };
+  }, [observerCallback, column.title]);
 
   const [{ canDrop, isOver }, drop] = useDrop(() => ({
     accept: 'card',
@@ -55,11 +99,22 @@ export default function KanbanColumn ({ column }: IKanbanColumnProps) {
             }
           )}
         >
-          {column.tasks.map((task) => {
+          {visibleTasks.map((task) => {
             return (
               <KanbanCard key={task.id} task={task} />
             )
           })}
+
+          {/* Trigger element for infinite scroll 
+            (only shown if there are more tasks to load)
+          */}
+          {page < maxPage && 
+            <div
+              id={`infinite-scroll-trigger-${column.title}`}
+              className="infinite-scroll-trigger"
+              style={{ height: '0px' }} 
+            />
+          }
         </div>
       </div>
     </div>
