@@ -1,5 +1,4 @@
 import FilterBar from '../FilterBar';
-import PageTitle from '../PageTitle';
 
 export interface IDraftsPageProps {
 }

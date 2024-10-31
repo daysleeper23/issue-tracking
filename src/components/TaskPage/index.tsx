@@ -1,5 +1,4 @@
 import KanbanBoard from './Kanban';
-import PageTitle from '../PageTitle';
 import FilterBar from '../FilterBar';
 import { ITask } from '@/lib/types';
 import { useState } from 'react';

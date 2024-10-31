@@ -1,4 +1,3 @@
-import PageTitle from '../PageTitle';
 import FilterBar from '../FilterBar';
 
 export interface ISprintPageProps {
