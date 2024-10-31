@@ -21,7 +21,7 @@ const dueDateIcon = (dueDate: string): React.ReactNode => {
 
 export default function DueDate ({ dueDate }: IDueDateProps) {
   return (
-    <div className='flex gap-1'>
+    <div className='flex gap-1 items-center'>
       {dueDateIcon(dueDate)}
       {dueDate}
     </div>

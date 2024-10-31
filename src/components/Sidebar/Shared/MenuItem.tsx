@@ -16,7 +16,7 @@ export default function MenuItem ({ children, url, text }: IMenuItemProps) {
       className={({ isActive }) =>
         [
           isActive 
-            ? `${className} bg-zinc-100 text-zinc-900` 
+            ? `${className} bg-zinc-300 text-zinc-900` 
             : className,
         ].join(" ")
       }

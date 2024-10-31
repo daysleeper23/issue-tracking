@@ -13,6 +13,7 @@ export interface ICollapsibleMenuProps {
 
 export default function CollapsibleMenu ({ title, items }: ICollapsibleMenuProps) {
   return (
+    <div className="mt-1">
     <Disclosure defaultOpen={true}>
       {({ open }) => (
         <>
@@ -25,12 +26,13 @@ export default function CollapsibleMenu ({ title, items }: ICollapsibleMenuProps
           </DisclosureButton>
           <DisclosurePanel
             static
-            className={`mt-1 overflow-hidden transition-max-height duration-100 ease-in-out ${open ? 'max-h-96' : 'max-h-0'}`}
+            className={`overflow-hidden transition-max-height duration-100 ease-in-out ${open ? 'max-h-96' : 'max-h-0'}`}
           >
             <ListMenuItem items={items} />
           </DisclosurePanel>
         </>
       )}
     </Disclosure>
+    </div>
   );
 }

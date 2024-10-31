@@ -1,10 +1,19 @@
+import clsx from "clsx";
+
 export interface IAppProps {
   children?: React.ReactNode;
+  style: string;
 }
 
-export default function InteractiveButton ({ children }: IAppProps) {
+export default function InteractiveButton ({ children, style }: IAppProps) {
   return (
-    <div className="bg-zinc-50 hover:bg-zinc-100 p-1 text-xs font-light text-zinc-500 rounded border border-zinc-200 flex">
+    <div className={clsx(
+      "hover:bg-zinc-100 p-1 text-xs font-light text-zinc-500 rounded flex",
+      {
+        "bg-zinc-50 border border-zinc-200": style === "board",
+        "": !(style === "board"),
+      }
+    )}>
       {children}
     </div>
   );

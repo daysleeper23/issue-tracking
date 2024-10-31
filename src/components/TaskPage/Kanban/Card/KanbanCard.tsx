@@ -1,12 +1,14 @@
 import { ITask } from "@/lib/types";
-import InteractiveButton from "../../InteractiveButton";
+import InteractiveButton from "../../Properties/InteractiveButton";
 import DueDate from "../../Properties/DueDate";
 import Estimate from "../../Properties/Estimate";
-import Priority from "../../Properties/Priority";
-import Sprint from "../../Properties/Sprint";
+import Priority from "../../Properties/TaskPriority";
+import Sprint from "../../Properties/SprintElement";
 import { useDrag } from "react-dnd";
 import clsx from "clsx";
 import Assignee from "../../Properties/Assignee";
+import TaskNumber from "../../Properties/TaskNumber";
+import TaskTitle from "../../Properties/TaskTitle";
 
 export interface IKanbanCardProps {
   task: ITask
@@ -42,27 +44,25 @@ export default function KanbanCard ({ task }: IKanbanCardProps) {
     )}
     >
       <div className="flex flex-row justify-between items-center">
-        <span className="font-extralight text-xs uppercase">{task.id}</span>
+        <TaskNumber value={task.id} />
         <Assignee assignee={task.assignee} />
       </div>
-      <div className="font-medium text-sm text-zinc-900">
-        {task.title}
-      </div>
+      <TaskTitle title={task.title} size='small' />
 
       <div className="flex flex-row flex-wrap gap-2">
-        <InteractiveButton>
+        <InteractiveButton style="board">
           <DueDate dueDate={task.dueDate} />
         </InteractiveButton>
-        <InteractiveButton>
+        <InteractiveButton  style="board">
           <Priority priority={task.priority} />
         </InteractiveButton>
-        <InteractiveButton>
+        <InteractiveButton  style="board">
           <Estimate estimate={task.estimate} />
         </InteractiveButton>
-        <InteractiveButton>
+        <InteractiveButton  style="board">
           <Sprint sprint={task.sprint} />
         </InteractiveButton>
-        <InteractiveButton children={task.project.title} />
+        <InteractiveButton style="board" children={task.project.title} />
       </div>
 
     </div>

@@ -1,13 +1,13 @@
 import { ITask } from "@/lib/types";
 import { CaretCircleDoubleRight } from "@phosphor-icons/react";
 
-export interface ISprintProps {
+export interface ISprintElementProps {
   sprint: ITask["sprint"];
 }
 
-export default function Sprint ({ sprint }: ISprintProps) {
+export default function SprintElement ({ sprint }: ISprintElementProps) {
   return (
-    <div className="flex gap-1">
+    <div className="flex gap-1 items-center">
       <CaretCircleDoubleRight size={16} weight="bold" />
       {sprint.title}
     </div>

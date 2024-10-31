@@ -18,15 +18,15 @@ const getById = async (id: string) => {
 }
 
 const create = async (data: any) => {
-  console.log('create');
+  console.log('create', data);
 }
 
 const update = async (id: string, data: any) => {
-  console.log('update');
+  console.log('update', id, data);
 }
 
 const remove = async (id: string) => {
-  console.log('remove');
+  console.log('remove', id);
 }
 
 export { getAll, getById, create, update, remove }

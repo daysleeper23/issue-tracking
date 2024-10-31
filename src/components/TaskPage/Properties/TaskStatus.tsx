@@ -1,8 +1,11 @@
 import { CheckSquare, MinusSquare, PlusSquare, Square, XSquare, Selection } from "@phosphor-icons/react";
+import clsx from "clsx";
 
 
 export interface ITaskStatusProps {
   status: string;
+  isDisplayText: boolean;
+  iconSize: number;
 }
 
 const statusIcon = (status: string, size: number) => {
@@ -20,11 +23,18 @@ const statusIcon = (status: string, size: number) => {
   return <XSquare className="text-red-600" size={size} weight="bold" />
 }
 
-export default function TaskStatus ({ status }: ITaskStatusProps) {
+export default function TaskStatus ({ status, isDisplayText, iconSize }: ITaskStatusProps) {
   return (
-    <div className="flex gap-1 items-center">
-      {statusIcon(status, 20)}
-      {status}
+    <div className={clsx(
+      "flex gap-1 items-center justify-center",
+      {
+        "w-5 h-5": isDisplayText === false,
+        "": isDisplayText === true
+      }
+      )}
+    >
+      {statusIcon(status, iconSize)}
+      {isDisplayText && status}
     </div>
   );
 }

@@ -6,7 +6,7 @@ export interface IEstimateProps {
 
 export default function Estimate ({ estimate }: IEstimateProps) {
   return (
-    <div className='flex gap-1'>
+    <div className='flex gap-1 items-center'>
       <Timer size={16} weight="bold" />
       {estimate}
     </div>

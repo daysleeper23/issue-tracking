@@ -72,7 +72,7 @@ export default function KanbanColumn ({ column }: IKanbanColumnProps) {
   return (
     <div className='w-80 bg-zinc-50 rounded-md border border-zinc-100 p-2 flex flex-col gap-4 relative'>
       <KanbanColumnTitle length={column.tasks.length}>
-        <TaskStatus status={column.title} />
+        <TaskStatus status={column.title} isDisplayText={true} iconSize={20} />
       </KanbanColumnTitle>  
 
       <div 

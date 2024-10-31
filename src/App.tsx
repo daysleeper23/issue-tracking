@@ -9,7 +9,7 @@ import DraftsPage from './components/DraftsPage'
 import TeamsPage from './components/TeamsPage'
 
 import { useEffect, useState } from 'react'
-import { getAll } from './services/tasks'
+import { getAll } from './services/tasks.json-server'
 import { ITask } from './lib/types'
 
 function App() {
