@@ -7,7 +7,7 @@ export interface IDraftsPageProps {
 export default function DraftsPage (_props: IDraftsPageProps) {
   return (
     <>
-      <PageTitle title='Drafts' />
+      {/* <PageTitle title='Drafts' /> */}
       <FilterBar />
     </>
   );

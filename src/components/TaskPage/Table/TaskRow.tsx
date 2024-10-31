@@ -18,8 +18,9 @@ export default function Taskrow ({ task }: ITaskrowProps) {
   const propertyStyle = 'list';
 
   return (
-    <div className="flex flex-1 gap-1 px-6 h-11 items-center justify-between border-b border-zinc-100">
+    <div className="flex flex-1 gap-1 px-2 sm:px-6 h-11 items-center justify-between border-b border-zinc-100">
       <div className="flex gap-1 items-center">
+        
         <InteractiveButton style={propertyStyle}>
           <Priority priority={task.priority} />
         </InteractiveButton>
@@ -34,22 +35,30 @@ export default function Taskrow ({ task }: ITaskrowProps) {
       </div>
 
       <div className="flex flex-row flex-wrap gap-1">
-        <InteractiveButton style='board'>
-          <ProjectElement project={task.project} />
-        </InteractiveButton>
+        <div className="hidden md:flex">
+          <InteractiveButton style='board'>
+            <ProjectElement project={task.project} />
+          </InteractiveButton>
+        </div>
 
-        <InteractiveButton style='board'>
-          <SprintElement sprint={task.sprint} />
-        </InteractiveButton>
+        <div className="hidden md:flex">
+          <InteractiveButton style='board'>
+            <SprintElement sprint={task.sprint} />
+          </InteractiveButton>
+        </div>
 
-        <InteractiveButton  style={propertyStyle}>
-          <Estimate estimate={task.estimate} />
-        </InteractiveButton>
-
-        <InteractiveButton style={propertyStyle}>
-          <DueDate dueDate={task.dueDate} />
-        </InteractiveButton>
+        <div className="hidden md:flex">
+          <InteractiveButton  style={propertyStyle}>
+            <Estimate estimate={task.estimate} />
+          </InteractiveButton>
+        </div>
         
+        <div className="hidden md:flex">
+          <InteractiveButton style={propertyStyle}>
+            <DueDate dueDate={task.dueDate} />
+          </InteractiveButton>
+        </div>
+
         <InteractiveButton  style={propertyStyle}>
           <Assignee assignee={task.assignee} />
         </InteractiveButton>

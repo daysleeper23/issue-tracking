@@ -11,8 +11,10 @@ import TeamsPage from './components/TeamsPage'
 import { useEffect, useState } from 'react'
 import { getAll } from './services/tasks.json-server'
 import { ITask } from './lib/types'
+import PageTitle from './components/PageTitle'
 
 function App() {
+  const [sidebarVisibility, setSidebarVisibility] = useState(false);
   const [tasks, setTasks] = useState([
     { title: 'Backlog', value: 'Backlog', tasks: [] },
     { title: 'To Do', value: 'Todo', tasks: [] },
@@ -38,10 +40,16 @@ function App() {
     fetchTasks();
   }, []);
 
+  const toggleSidebar = () => {
+    setSidebarVisibility(!sidebarVisibility);
+  }
+    
+
   return (
     <div className="flex h-screen bg-gray-200 p-2">
-      <Sidebar />
+      <Sidebar isOpen={sidebarVisibility} onClose={toggleSidebar} />
       <div className="flex-1 flex flex-col overflow-hidden rounded-sm bg-white">
+        <PageTitle setSidebarOpen={toggleSidebar} />
         <Routes>
           <Route path="/inbox" element={<InboxPage />} />
           <Route path="/my-tasks" element={<MyTasksPage />} />

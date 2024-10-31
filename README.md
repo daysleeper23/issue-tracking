@@ -11,3 +11,4 @@ An issue tracking app using Typescript & TailwindCSS
 | Refactoring Sidebar: Implement dynamic menu               | 2 hrs         |
 | KanbanBoard: optimization for large dataset               | 8 hrs         |
 | TaskTable: list view & optimization using virtualization  | 2 hrs         |
+| TaskTable & Sidebar: responsive UI                        | 3 hrs         |

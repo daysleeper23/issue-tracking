@@ -7,7 +7,7 @@ export interface IProjecPageProps {
 export default function ProjectPage (_props: IProjecPageProps) {
   return (
     <>
-      <PageTitle title='Projects' />
+      {/* <PageTitle title='Projects' /> */}
       <FilterBar />
     </>
   );

@@ -7,7 +7,7 @@ export interface ISprintPageProps {
 export default function SprintPage (_props: ISprintPageProps) {
   return (
     <>
-      <PageTitle title='Sprints' />
+      {/* <PageTitle title='Sprints' /> */}
       <FilterBar />
     </>
   );

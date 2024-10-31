@@ -7,7 +7,7 @@ export interface ITeamsPageProps {
 export default function TeamsPage (_props: ITeamsPageProps) {
   return (
     <div>
-      <PageTitle title='Teams' />
+      {/* <PageTitle title='Teams' /> */}
       <FilterBar />
     </div>
   );

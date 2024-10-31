@@ -7,7 +7,7 @@ export interface IInboxPageProps {
 export default function InboxPage (_props: IInboxPageProps) {
   return (
     <>
-      <PageTitle title='Inbox' />
+      {/* <PageTitle title='Inbox' /> */}
       <FilterBar />
     </>
   );

@@ -1,4 +1,4 @@
-import { CheckSquare, StackSimple, Target, UserSquare } from "@phosphor-icons/react";
+import { FlagBanner, StackSimple, Target, UserSquare } from "@phosphor-icons/react";
 import CollapsibleMenu from "./Shared/CollapsibleMenu";
 
 export interface IWorkspaceMenuProps {
@@ -7,8 +7,8 @@ export interface IWorkspaceMenuProps {
 const menuItemsWorkspace= [
   {
     url: '/initiatives',
-    text: 'Issues',
-    icon: CheckSquare
+    text: 'Initiatives',
+    icon: FlagBanner
   },
   {
     url: '/projects',

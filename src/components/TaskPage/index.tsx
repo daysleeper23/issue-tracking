@@ -18,7 +18,7 @@ export function TaskPage ({ tasks }: ITaskPageProps) {
 
   return (
     <>
-      <PageTitle title='Issues' />
+      {/* <PageTitle title='Issues' /> */}
       <FilterBar setDisplayState={setDisplayState} />
       {
         displayState === 0 
