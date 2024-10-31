@@ -3,7 +3,6 @@ import PageTitle from '../PageTitle';
 import FilterBar from '../FilterBar';
 import { ITask } from '@/lib/types';
 import { useState } from 'react';
-import TaskTable from './Table';
 import TaskTableVirtualized from './Table/TaskTableVirtualized';
 
 export interface ITaskPageProps {
