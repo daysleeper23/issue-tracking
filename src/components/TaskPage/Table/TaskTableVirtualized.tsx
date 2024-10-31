@@ -18,7 +18,7 @@ export default function TaskTableVirtualized ({ data }: ITaskTableVirtualizedPro
   const rowVirtualizer = useVirtualizer({
     count: all.length,
     getScrollElement: () => parentRef.current,
-    estimateSize: () => 45, // Estimated height of each item in pixels
+    estimateSize: () => 45,
   });
 
   return (
