@@ -20,10 +20,16 @@ const dueDateIcon = (dueDate: string): React.ReactNode => {
 
 
 export default function DueDate ({ dueDate }: IDueDateProps) {
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  }
+
   return (
-    <div className='flex gap-1 items-center'>
+    <div className='flex gap-1 items-center w-16'>
       {dueDateIcon(dueDate)}
-      {dueDate}
+      {formatDate(dueDate)}
     </div>
   );
 }

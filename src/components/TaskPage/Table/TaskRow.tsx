@@ -34,21 +34,22 @@ export default function Taskrow ({ task }: ITaskrowProps) {
       </div>
 
       <div className="flex flex-row flex-wrap gap-1">
-        <InteractiveButton style={propertyStyle}>
+        <InteractiveButton style='board'>
           <ProjectElement project={task.project} />
         </InteractiveButton>
 
-        <InteractiveButton style={propertyStyle}>
+        <InteractiveButton style='board'>
           <SprintElement sprint={task.sprint} />
+        </InteractiveButton>
+
+        <InteractiveButton  style={propertyStyle}>
+          <Estimate estimate={task.estimate} />
         </InteractiveButton>
 
         <InteractiveButton style={propertyStyle}>
           <DueDate dueDate={task.dueDate} />
         </InteractiveButton>
         
-        <InteractiveButton  style={propertyStyle}>
-          <Estimate estimate={task.estimate} />
-        </InteractiveButton>
         <InteractiveButton  style={propertyStyle}>
           <Assignee assignee={task.assignee} />
         </InteractiveButton>
