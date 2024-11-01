@@ -34,7 +34,7 @@ const columns = [
       </InteractiveButton>
   }),
   columnHelper.accessor('title', {
-    cell: info => <TaskTitle title={info.getValue()} size='mini' />,
+    cell: info => <TaskTitle title={info.getValue()} size='mini' style='table' />,
   }),
   columnHelper.accessor('project.title', {
     cell: info => <InteractiveButton style='list' children={info.renderValue()} />,
