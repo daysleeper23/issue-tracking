@@ -12,3 +12,5 @@ An issue tracking app using Typescript & TailwindCSS
 | KanbanBoard: optimization for large dataset               | 8 hrs         |
 | TaskTable: list view & optimization using virtualization  | 2 hrs         |
 | TaskTable & Sidebar: responsive UI                        | 3 hrs         |
+| TaskDetailPage:                                           |               |
+| - Initial setup, layout & styling                         | 2 hrs         |
