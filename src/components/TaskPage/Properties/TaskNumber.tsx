@@ -6,7 +6,7 @@ export interface ITaskNumberProps {
 
 export default function TaskNumber ({ value }: ITaskNumberProps) {
   return (
-    <div className="hidden md:flex items-center px-1 ">
+    <div className="hidden md:flex items-center">
       <span className="w-16 font-extralight text-xs uppercase text-zinc-500">{value}</span>
     </div>
   );

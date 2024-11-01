@@ -10,6 +10,7 @@ import Assignee from "../../Properties/Assignee";
 import TaskNumber from "../../Properties/TaskNumber";
 import TaskTitle from "../../Properties/TaskTitle";
 import { Link } from "react-router-dom";
+import TaskStatus from "../../Properties/TaskStatus";
 
 export interface IKanbanCardProps {
   task: ITask
@@ -46,10 +47,18 @@ export default function KanbanCard ({ task }: IKanbanCardProps) {
     >
       <Link to={`/tasks/${task.id}`}>
         <div className="flex flex-row justify-between items-center">
-          <TaskNumber value={task.id} />
+          <div className="flex gap-1">
+            <InteractiveButton style="board">
+              <TaskStatus status={task.status} isDisplayText={false} iconSize={16}/>
+            </InteractiveButton>
+            <TaskNumber value={task.id} />
+          </div>
+          
           <Assignee assignee={task.assignee} />
         </div>
-        <TaskTitle title={task.title} size='small' />
+
+        <TaskTitle title={task.title} size='small' style="card" />
+        
         <div className="flex flex-row flex-wrap gap-2">
           <InteractiveButton style="board">
             <DueDate dueDate={task.dueDate} />

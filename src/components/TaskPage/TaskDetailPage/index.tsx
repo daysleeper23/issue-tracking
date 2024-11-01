@@ -23,7 +23,7 @@ export default function TaskDetailPage ({ task }: ITaskDetailPageProps) {
   return (
     <div className='flex h-full'>
       <div className='flex-1 border-r border-zinc-200 flex flex-col gap-2 py-8 px-24'>
-        <TaskTitle title={task.title} size='large' />
+        <TaskTitle title={task.title} size='large' style='card'/>
         <div>
           This is the task description that you're expecting to see.
         </div>

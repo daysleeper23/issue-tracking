@@ -9,14 +9,15 @@ import DraftsPage from './components/DraftsPage'
 import TeamsPage from './components/TeamsPage'
 
 import { useEffect, useState } from 'react'
-import { getAll } from './services/tasks.json-server'
+// import { getAll } from './services/tasks.json-server'
+import { getAll } from './services/tasks'
 import { ITask } from './lib/types'
 import PageTitle from './components/PageTitle'
 import TaskDetailPage from './components/TaskPage/TaskDetailPage'
 
 function App() {
   const [sidebarVisibility, setSidebarVisibility] = useState(false);
-  const [tasks, setTasks] = useState([
+  const [tasks, setTasks] = useState<{ title: string; value: string; tasks: ITask[] }[]>([
     { title: 'Backlog', value: 'Backlog', tasks: [] },
     { title: 'To Do', value: 'Todo', tasks: [] },
     { title: 'In Progress', value: 'In Progress', tasks: [] },

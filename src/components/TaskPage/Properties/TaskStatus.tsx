@@ -28,7 +28,7 @@ export default function TaskStatus ({ status, isDisplayText, iconSize }: ITaskSt
     <div className={clsx(
       "flex gap-1 items-center justify-center",
       {
-        "w-5 h-5": isDisplayText === false,
+        "w-4 h-4": isDisplayText === false,
         "": isDisplayText === true
       }
       )}

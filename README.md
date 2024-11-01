@@ -14,3 +14,4 @@ An issue tracking app using Typescript & TailwindCSS
 | TaskTable & Sidebar: responsive UI                        | 3 hrs         |
 | TaskDetailPage:                                           |               |
 | - Initial setup, layout & styling                         | 2 hrs         |
+| TaskTable: Fix responsive issues & polishing the UI       | 3 hrs         |

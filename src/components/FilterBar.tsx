@@ -10,8 +10,8 @@ export default function FilterBar ({ setDisplayState = () => {} }: IFilterBarPro
 
   // }
   return (
-    <div className="px-2 sm:px-6 py-2 border-b text-zinc-700 flex justify-between">
-      <Button className='text-xs font-medium px-2 py-1 rounded hover:bg-zinc-100 flex gap-2'>
+    <div className="px-4 md:px-8 py-2 border-b text-zinc-700 flex justify-between">
+      <Button className='text-xs font-medium px-1 py-1 rounded hover:bg-zinc-100 flex gap-2 items-center'>
         <FunnelSimple size={16} weight="bold" />
         Filter
       </Button>

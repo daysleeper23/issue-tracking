@@ -66,7 +66,7 @@ function generateRandomTask(id: number): ITask {
       id: `assignee-${Math.floor(Math.random() * 1000)}`,
       name: getRandomItem(assigneeNames),
       avatarUrl: getRandomAvatar(),
-      onlineStatuses: getRandomItem(onlineStatuses)
+      onlineStatus: getRandomItem(onlineStatuses)
     }
   };
 }

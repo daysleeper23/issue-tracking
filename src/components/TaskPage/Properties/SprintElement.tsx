@@ -7,7 +7,7 @@ export interface ISprintElementProps {
 
 export default function SprintElement ({ sprint }: ISprintElementProps) {
   return (
-    <div className="flex gap-1 items-center">
+    <div className="flex gap-1 items-center text-nowrap">
       <CaretCircleDoubleRight size={16} weight="bold" />
       {sprint.title}
     </div>

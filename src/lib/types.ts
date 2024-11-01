@@ -17,6 +17,6 @@ export interface ITask {
     id: string;
     name: string;
     avatarUrl: string;
-    onlineStatuses: string;
+    onlineStatus: string;
   }
 };
