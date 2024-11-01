@@ -10,8 +10,8 @@ import TaskTitle from '../Properties/TaskTitle';
 import InteractiveButton from '../Properties/InteractiveButton';
 import Sprint from '../Properties/SprintElement';
 import DueDate from '../Properties/DueDate';
-import Priority from '../Properties/TaskPriority';
-import Estimate from '../Properties/Estimate';
+import Priority from '../Properties/PriorityElement';
+import Estimate from '../Properties/EstimateElement';
 import Assignee from '../Properties/Assignee';
 import TaskStatus from '../Properties/TaskStatus';
 

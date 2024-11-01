@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 export interface ITaskTitleProps {
   title: ITask['title'];
-  size: 'small' | 'mini';
+  size: 'large' | 'small' | 'mini';
 }
 
 export default function TaskTitle ({ title, size }: ITaskTitleProps) {
@@ -11,6 +11,7 @@ export default function TaskTitle ({ title, size }: ITaskTitleProps) {
     <div className={clsx(
         "font-medium  text-zinc-900",
         {
+          "text-2xl font-semibold text-zinc-900": size === 'large',
           "text-sm": size === 'small',
           "text-xs": size === 'mini',
         }

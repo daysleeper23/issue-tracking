@@ -1,14 +1,15 @@
 import { ITask } from "@/lib/types";
 import InteractiveButton from "../../Properties/InteractiveButton";
 import DueDate from "../../Properties/DueDate";
-import Estimate from "../../Properties/Estimate";
-import Priority from "../../Properties/TaskPriority";
+import Estimate from "../../Properties/EstimateElement";
+import Priority from "../../Properties/PriorityElement";
 import Sprint from "../../Properties/SprintElement";
 import { useDrag } from "react-dnd";
 import clsx from "clsx";
 import Assignee from "../../Properties/Assignee";
 import TaskNumber from "../../Properties/TaskNumber";
 import TaskTitle from "../../Properties/TaskTitle";
+import { Link } from "react-router-dom";
 
 export interface IKanbanCardProps {
   task: ITask
@@ -43,27 +44,28 @@ export default function KanbanCard ({ task }: IKanbanCardProps) {
       }
     )}
     >
-      <div className="flex flex-row justify-between items-center">
-        <TaskNumber value={task.id} />
-        <Assignee assignee={task.assignee} />
-      </div>
-      <TaskTitle title={task.title} size='small' />
-
-      <div className="flex flex-row flex-wrap gap-2">
-        <InteractiveButton style="board">
-          <DueDate dueDate={task.dueDate} />
-        </InteractiveButton>
-        <InteractiveButton  style="board">
-          <Priority priority={task.priority} />
-        </InteractiveButton>
-        <InteractiveButton  style="board">
-          <Estimate estimate={task.estimate} />
-        </InteractiveButton>
-        <InteractiveButton  style="board">
-          <Sprint sprint={task.sprint} />
-        </InteractiveButton>
-        <InteractiveButton style="board" children={task.project.title} />
-      </div>
+      <Link to={`/tasks/${task.id}`}>
+        <div className="flex flex-row justify-between items-center">
+          <TaskNumber value={task.id} />
+          <Assignee assignee={task.assignee} />
+        </div>
+        <TaskTitle title={task.title} size='small' />
+        <div className="flex flex-row flex-wrap gap-2">
+          <InteractiveButton style="board">
+            <DueDate dueDate={task.dueDate} />
+          </InteractiveButton>
+          <InteractiveButton  style="board">
+            <Priority priority={task.priority} />
+          </InteractiveButton>
+          <InteractiveButton  style="board">
+            <Estimate estimate={task.estimate} />
+          </InteractiveButton>
+          <InteractiveButton  style="board">
+            <Sprint sprint={task.sprint} />
+          </InteractiveButton>
+          <InteractiveButton style="board" children={task.project.title} />
+        </div>
+      </Link>
 
     </div>
   );

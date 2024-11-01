@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useMatch } from 'react-router-dom'
 import { TaskPage } from './components/TaskPage'
 import ProjectPage from './components/ProjectPage'
 import SprintPage from './components/SprintPage'
@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react'
 import { getAll } from './services/tasks.json-server'
 import { ITask } from './lib/types'
 import PageTitle from './components/PageTitle'
+import TaskDetailPage from './components/TaskPage/TaskDetailPage'
 
 function App() {
   const [sidebarVisibility, setSidebarVisibility] = useState(false);
@@ -43,7 +44,11 @@ function App() {
   const toggleSidebar = () => {
     setSidebarVisibility(!sidebarVisibility);
   }
-    
+
+  const match = useMatch('/tasks/:id');
+  const singleTask: ITask | null = match 
+    ? tasks.flatMap(task => task.tasks).find((task: ITask) => task.id === match.params.id) || null
+    : null;
 
   return (
     <div className="flex h-screen bg-gray-200 p-2">
@@ -51,6 +56,7 @@ function App() {
       <div className="flex-1 flex flex-col overflow-hidden rounded-sm bg-white">
         <PageTitle setSidebarOpen={toggleSidebar} />
         <Routes>
+          <Route path="/tasks/:id" element={<TaskDetailPage task={singleTask} />} />
           <Route path="/inbox" element={<InboxPage />} />
           <Route path="/my-tasks" element={<MyTasksPage />} />
           <Route path="/drafts" element={<DraftsPage />} />
