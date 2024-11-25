@@ -1,23 +1,27 @@
-import { ITask } from '@/lib/types';
 import InteractiveButton from '../Properties/InteractiveButton';
-import TaskStatus from '../Properties/TaskStatus';
 import TaskTitle from '../Properties/TaskTitle';
 import { Button } from '@headlessui/react';
 import { Copy, GitBranch, Link } from '@phosphor-icons/react';
 import SprintElement from '../Properties/SprintElement';
-import TaskPriority from '../Properties/PriorityElement';
-import Assignee from '../Properties/Assignee';
-import EstimateElement from '../Properties/EstimateElement';
+import { DropdownWithIcon } from '@/components/Dropdown';
+import { useAppSelector } from '@/store';
+import { useLocation } from 'react-router-dom';
+import { DropdownHeadless } from '@/components/DropdownHeadless';
 
 export interface ITaskDetailPageProps {
-  task: ITask | null;
+
 }
 
-export default function TaskDetailPage ({ task }: ITaskDetailPageProps) {
+export default function TaskDetailPage (_props: ITaskDetailPageProps) {
   const buttonStyle = 'list';
+  const location = useLocation();
+  const { task } = location.state || {}; // Extract the `task` object
 
-  if (!task) {
-    return <div>No task found</div>;
+  const projects = useAppSelector(state => state.projects.data);
+  const proj = projects.find(p => p.id === task.project);
+
+  if (!proj) {
+    return <div>No project found</div>;
   }
 
   return (
@@ -51,36 +55,32 @@ export default function TaskDetailPage ({ task }: ITaskDetailPageProps) {
 
           {/* status */}
           <div className='flex gap-1'>
-            <InteractiveButton style={buttonStyle}>
-              <TaskStatus status={task.status} isDisplayText={true} iconSize={20} />
-            </InteractiveButton>
+            <DropdownWithIcon selected={task.status} buttonText={true} type='task-status' />
           </div>
 
           {/* priority */}
           <div className='flex gap-1'>
-            <InteractiveButton style={buttonStyle}>
-              <TaskPriority priority={task.priority} iconSizeControl={20} isDisplayText={true} />
-            </InteractiveButton>
+            <DropdownWithIcon selected={task.priority} buttonText={true} type='priority' />
           </div>
 
           {/* assignee */}
           <div className='flex gap-1'>
-            <InteractiveButton style={buttonStyle}>
-              <Assignee assignee={task.assignee} isDisplayText={true}/>
-            </InteractiveButton>
+            <DropdownWithIcon selected={task.assignee} buttonText={true} type='assignee' />
           </div>
 
           {/* estimate */}
           <div className='flex gap-1'>
-            <InteractiveButton style={buttonStyle}>
-              <EstimateElement estimate={task.estimate} iconSizeControl={20} />
-            </InteractiveButton>
+            <DropdownWithIcon selected={task.estimate.toString()} buttonText={true} type='estimate' />
           </div>
+
+          {/* <div className='flex gap-1'>
+            <DropdownHeadless selected={task.estimate.toString()} buttonText={true} type='estimate' />
+          </div> */}
 
           {/* project */}
           <div className='flex flex-col gap-2'>
             <div className='text-zinc-600 text-xs font-medium'>Project</div>
-            <InteractiveButton style={buttonStyle}>{task.project.title}</InteractiveButton>
+            <InteractiveButton style={buttonStyle}>{proj.title}</InteractiveButton>
           </div>
 
           {/* sprint */}          

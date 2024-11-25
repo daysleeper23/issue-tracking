@@ -1,15 +1,16 @@
 
-import data from '../data/tasks.json';
+import { Project } from '@/lib/types';
+import data from '../data/projects.json';
 
-const getTasks = async () => {
+const getProjects: () => Promise<Array<Project>> = async () => {
   const response = await data;
-  // console.log(response);
+  console.log(response);
   return response;
 }
 
-const getTaskById = async (id: string) => {
+const getProjectById = async (id: string) => {
   try {
-    const response = await data.find((task: any) => task.id === id);
+    const response = await data.find((project: any) => project.id === id);
     return response;
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -29,4 +30,4 @@ const remove = async (id: string) => {
   console.log('remove', id);
 }
 
-export default { getTasks, getTaskById, create, update, remove }
+export default { getProjects, getProjectById, create, update, remove }

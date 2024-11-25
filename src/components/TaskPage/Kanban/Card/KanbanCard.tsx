@@ -11,6 +11,7 @@ import TaskNumber from "../../Properties/TaskNumber";
 import TaskTitle from "../../Properties/TaskTitle";
 import { Link } from "react-router-dom";
 import TaskStatus from "../../Properties/TaskStatus";
+import ProjectElement from "../../Properties/ProjectElement";
 
 export interface IKanbanCardProps {
   task: ITask
@@ -51,7 +52,7 @@ export default function KanbanCard ({ task }: IKanbanCardProps) {
             <InteractiveButton style="board">
               <TaskStatus status={task.status} isDisplayText={false} iconSize={16}/>
             </InteractiveButton>
-            <TaskNumber value={task.id} />
+            <TaskNumber value={task.number} />
           </div>
           
           <Assignee assignee={task.assignee} />
@@ -72,7 +73,7 @@ export default function KanbanCard ({ task }: IKanbanCardProps) {
           <InteractiveButton  style="board">
             <Sprint sprint={task.sprint} />
           </InteractiveButton>
-          <InteractiveButton style="board" children={task.project.title} />
+          <InteractiveButton style="board" children={<ProjectElement project={task.project} />} />
         </div>
       </Link>
 

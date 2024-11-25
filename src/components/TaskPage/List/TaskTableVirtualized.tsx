@@ -4,19 +4,14 @@ import { useRef } from 'react';
 import TaskRow from './TaskRow';
 
 export interface ITaskTableVirtualizedProps {
-  data: {
-    title: string;
-    value: string;
-    tasks: ITask[];
-  }[];
+  data: ITask[];
 }
 
 export default function TaskTableVirtualized ({ data }: ITaskTableVirtualizedProps) {
   const parentRef = useRef<HTMLDivElement | null>(null);
-  const all = data.flatMap((column) => column.tasks);
 
   const rowVirtualizer = useVirtualizer({
-    count: all.length,
+    count: data.length,
     getScrollElement: () => parentRef.current,
     estimateSize: () => 45,
   });
@@ -53,11 +48,11 @@ export default function TaskTableVirtualized ({ data }: ITaskTableVirtualizedPro
               }}
               className='flex-1'
             >
-              <TaskRow task={all[virtualItem.index]} />
+              <TaskRow task={data[virtualItem.index]} />
             </div>
           ))}
         </div>
-      </div>
+      </div>  
     </>
   );
 }

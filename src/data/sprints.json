@@ -1,0 +1,92 @@
+[
+  {
+    "id": "662b75a5-3aa0-4067-aef6-9841c6ddee1f",
+    "name": "Beta Release Sprint",
+    "description": "This is a sprint",
+    "status": "Review",
+    "start": "2024-12-16",
+    "end": "2025-01-01",
+    "team": "Awesome Team"
+  },
+  {
+    "id": "b5c918ce-c8b6-4dac-9029-59490dce06dd",
+    "name": "MVP Sprint 1",
+    "description": "This is a sprint",
+    "status": "Todo",
+    "start": "2024-12-07",
+    "end": "2025-01-06",
+    "team": "Awesome Team"
+  },
+  {
+    "id": "86b41dc5-e4f0-4da9-9bee-d997262b4ef3",
+    "name": "UI Optimization Sprint",
+    "description": "This is a sprint",
+    "status": "Todo",
+    "start": "2024-12-02",
+    "end": "2024-12-08",
+    "team": "Awesome Team"
+  },
+  {
+    "id": "cde1a11c-f351-4e12-a3e5-24ecb5332248",
+    "name": "API Testing Sprint",
+    "description": "This is a sprint",
+    "status": "Review",
+    "start": "2024-12-24",
+    "end": "2025-02-07",
+    "team": "Awesome Team"
+  },
+  {
+    "id": "7cd666b6-c665-419a-8635-ad42da6d232a",
+    "name": "Bug Fixing Sprint",
+    "description": "This is a sprint",
+    "status": "Canceled",
+    "start": "2024-11-10",
+    "end": "2025-01-17",
+    "team": "Awesome Team"
+  },
+  {
+    "id": "772a0ee9-a090-40aa-90d9-f0db2ee92129",
+    "name": "MVP Sprint 2",
+    "description": "This is a sprint",
+    "status": "Todo",
+    "start": "2024-12-07",
+    "end": "2025-02-22",
+    "team": "Awesome Team"
+  },
+  {
+    "id": "bad05f09-ef79-47fa-bc90-497e6be55415",
+    "name": "API Testing Sprint",
+    "description": "This is a sprint",
+    "status": "In Progress",
+    "start": "2024-12-09",
+    "end": "2025-03-02",
+    "team": "Awesome Team"
+  },
+  {
+    "id": "4d8019b0-c28f-4947-84fc-bfccad403971",
+    "name": "MVP Sprint 2",
+    "description": "This is a sprint",
+    "status": "Todo",
+    "start": "2025-01-04",
+    "end": "2025-03-01",
+    "team": "Awesome Team"
+  },
+  {
+    "id": "32f6ebb6-7e61-41e9-ab4d-1564fcb6de73",
+    "name": "Performance Sprint",
+    "description": "This is a sprint",
+    "status": "Completed",
+    "start": "2024-11-27",
+    "end": "2024-12-05",
+    "team": "Awesome Team"
+  },
+  {
+    "id": "94b1939d-101b-48cf-b770-982047f868db",
+    "name": "API Testing Sprint",
+    "description": "This is a sprint",
+    "status": "Canceled",
+    "start": "2024-11-21",
+    "end": "2025-01-16",
+    "team": "Awesome Team"
+  }
+]

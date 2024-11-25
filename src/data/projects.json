@@ -1,0 +1,402 @@
+[
+  {
+    "id": "8a252978-4789-4d8f-9b48-519ff6a3d29a",
+    "title": "📅 Database Schema Design",
+    "status": "Completed",
+    "priority": "Urgent",
+    "lead": "70c2e5c8-ac9f-4acb-83bb-002edaa74783",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-11-20",
+    "end": "2025-01-03"
+  },
+  {
+    "id": "e61d0bf7-1553-446a-85b1-768f685bdb5d",
+    "title": "📱 API Integration",
+    "status": "Todo",
+    "priority": "High",
+    "lead": "24e0bcb3-2df3-4a3f-bd00-68a3fdb93ddb",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2025-01-20",
+    "end": "2025-03-02"
+  },
+  {
+    "id": "5ba3cffd-4a04-41a9-a3ff-b4b27f1bde2c",
+    "title": "📈 Dashboard Design",
+    "status": "Completed",
+    "priority": "Medium",
+    "lead": "70c2e5c8-ac9f-4acb-83bb-002edaa74783",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-11-11",
+    "end": "2024-11-27"
+  },
+  {
+    "id": "f1c87fd3-2cfe-4fdc-921b-83d8b1bfeafa",
+    "title": "📅 Testing Automation",
+    "status": "In Progress",
+    "priority": "Low",
+    "lead": "70c2e5c8-ac9f-4acb-83bb-002edaa74783",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2025-01-03",
+    "end": "2025-02-19"
+  },
+  {
+    "id": "6720a065-dce3-4263-b77c-48c3ab289ce6",
+    "title": "📊 Authentication Service",
+    "status": "Completed",
+    "priority": "No",
+    "lead": "9bf4847d-ec3e-4be9-9968-f58c62698943",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-12-19",
+    "end": "2025-01-27"
+  },
+  {
+    "id": "784e9424-a9e2-4bb9-8d84-99592734f3ed",
+    "title": "🎨 UI Components",
+    "status": "Todo",
+    "priority": "High",
+    "lead": "3b952ceb-0ab1-4b2b-9efc-4d578f0d838a",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-11-16",
+    "end": "2024-12-25"
+  },
+  {
+    "id": "920a46b1-9ad7-47e3-9d9c-e4ee04495f92",
+    "title": "🌐 Performance Optimization",
+    "status": "Todo",
+    "priority": "No",
+    "lead": "6ff59d40-af00-4d8b-beb1-6bcc8d66caaa",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2025-01-02",
+    "end": "2025-01-07"
+  },
+  {
+    "id": "c61cf8d8-8c89-4d3c-a63e-e7a28723f893",
+    "title": "📊 Task View",
+    "status": "Backlog",
+    "priority": "High",
+    "lead": "7ccb92e9-59b7-4e20-b4b4-482adf74fe79",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2025-01-11",
+    "end": "2025-01-15"
+  },
+  {
+    "id": "2f68f0d1-9d62-48db-af20-589b47a50123",
+    "title": "📈 Task View",
+    "status": "Todo",
+    "priority": "High",
+    "lead": "5731950d-3b1a-46b1-8991-9897245df9ad",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-11-18",
+    "end": "2025-02-12"
+  },
+  {
+    "id": "3d4df5e6-2135-4e77-bff5-425687692aa7",
+    "title": "📚 WebSocket Integration",
+    "status": "Canceled",
+    "priority": "No",
+    "lead": "f7d01ed5-9bd8-467c-9922-f9b9536caf9f",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2025-01-08",
+    "end": "2025-02-12"
+  },
+  {
+    "id": "7c926085-cd6a-4d4e-94a8-753aaa577a72",
+    "title": "🔧 Task View",
+    "status": "Todo",
+    "priority": "Urgent",
+    "lead": "fd462af7-f341-4d6b-a7f6-c399940a6040",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2025-01-15",
+    "end": "2025-02-11"
+  },
+  {
+    "id": "774fb25b-fdac-402a-83e3-0957ccb3cc50",
+    "title": "🚀 WebSocket Integration",
+    "status": "Canceled",
+    "priority": "Urgent",
+    "lead": "2f7fef39-aad8-4256-a730-2dfc951dabaa",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-12-05",
+    "end": "2025-01-20"
+  },
+  {
+    "id": "dacf6fdf-1047-40f4-be9d-27b6cae37f73",
+    "title": "📚 Task View",
+    "status": "In Progress",
+    "priority": "Low",
+    "lead": "7e513034-dd6a-484b-a538-bd379e8b9382",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2025-02-08",
+    "end": "2025-03-02"
+  },
+  {
+    "id": "5c81ce32-145a-4fc6-8626-0b5cb20cd626",
+    "title": "📊 UI Components",
+    "status": "Completed",
+    "priority": "Low",
+    "lead": "7ccb92e9-59b7-4e20-b4b4-482adf74fe79",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-12-24",
+    "end": "2025-01-11"
+  },
+  {
+    "id": "ecae32df-03b8-4554-9380-df621f91c3e4",
+    "title": "🌐 API Integration",
+    "status": "Todo",
+    "priority": "Medium",
+    "lead": "c2bcb1f8-905b-4772-8b80-0086df255478",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-12-22",
+    "end": "2025-01-14"
+  },
+  {
+    "id": "dfeef041-c88e-4856-abf0-b7e309f60693",
+    "title": "📱 Database Schema Design",
+    "status": "Completed",
+    "priority": "Medium",
+    "lead": "5731950d-3b1a-46b1-8991-9897245df9ad",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2025-01-01",
+    "end": "2025-02-26"
+  },
+  {
+    "id": "b38d48ff-77ad-4244-a91e-914cc81ba347",
+    "title": "🚀 UI Components",
+    "status": "Todo",
+    "priority": "Urgent",
+    "lead": "a023d82d-d5c6-42f8-8245-cb14a2c401ba",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-12-01",
+    "end": "2025-02-24"
+  },
+  {
+    "id": "ffaa4e1a-6eb6-480e-970e-ffefdd4328e9",
+    "title": "🔧 Dashboard Design",
+    "status": "Completed",
+    "priority": "High",
+    "lead": "7e513034-dd6a-484b-a538-bd379e8b9382",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2025-02-07",
+    "end": "2025-03-01"
+  },
+  {
+    "id": "d171acf1-9617-4955-83cf-e321232896ba",
+    "title": "📚 WebSocket Integration",
+    "status": "Completed",
+    "priority": "No",
+    "lead": "7aecfe50-8c9e-4968-8ae0-541d1833a41b",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-12-03",
+    "end": "2024-12-18"
+  },
+  {
+    "id": "2e04aba1-db62-4dc4-b341-a840ddd61010",
+    "title": "📅 Notifications System",
+    "status": "Canceled",
+    "priority": "Low",
+    "lead": "ac4c2a7a-efc2-4a91-a8ed-ebed29b8ccf6",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-11-08",
+    "end": "2024-12-07"
+  },
+  {
+    "id": "9ae36a66-5417-4dba-b80f-687b115fabf7",
+    "title": "🔥 Task View",
+    "status": "Backlog",
+    "priority": "High",
+    "lead": "7aecfe50-8c9e-4968-8ae0-541d1833a41b",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-12-09",
+    "end": "2025-01-07"
+  },
+  {
+    "id": "7b0e55ff-be29-4e11-87d0-a8fd32b292e1",
+    "title": "📱 Authentication Service",
+    "status": "Completed",
+    "priority": "High",
+    "lead": "7e513034-dd6a-484b-a538-bd379e8b9382",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-12-03",
+    "end": "2025-01-30"
+  },
+  {
+    "id": "20d43117-6d84-4d44-912e-3ed4b4f54c9f",
+    "title": "📈 Dashboard Design",
+    "status": "Todo",
+    "priority": "Urgent",
+    "lead": "4dbd1b73-9797-4aad-b2f0-a991c68f6d01",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-12-04",
+    "end": "2024-12-18"
+  },
+  {
+    "id": "f8418b49-8d24-44b1-b0f6-d03b02302a24",
+    "title": "🚀 Database Schema Design",
+    "status": "Todo",
+    "priority": "No",
+    "lead": "c2bcb1f8-905b-4772-8b80-0086df255478",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2025-01-31",
+    "end": "2025-02-05"
+  },
+  {
+    "id": "c30b72f8-ff34-469d-b905-cae8014181ac",
+    "title": "🌐 Performance Optimization",
+    "status": "In Progress",
+    "priority": "Low",
+    "lead": "87ba714b-1805-4313-b64a-e69e3981dab4",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2025-01-01",
+    "end": "2025-03-01"
+  },
+  {
+    "id": "9032f6dd-1832-4cb0-a238-c8241581befb",
+    "title": "🌐 Database Schema Design",
+    "status": "Canceled",
+    "priority": "High",
+    "lead": "ac4c2a7a-efc2-4a91-a8ed-ebed29b8ccf6",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-11-23",
+    "end": "2025-01-04"
+  },
+  {
+    "id": "371cd608-00be-47f3-8cd6-b27730f92313",
+    "title": "🌐 Notifications System",
+    "status": "Canceled",
+    "priority": "No",
+    "lead": "95d5b5e4-ee07-4d12-8b80-8b7fa8e35faf",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-12-01",
+    "end": "2025-01-03"
+  },
+  {
+    "id": "813cbf49-8c92-4df9-b631-ca7b6d78ca66",
+    "title": "🚀 Testing Automation",
+    "status": "Todo",
+    "priority": "High",
+    "lead": "7ccb92e9-59b7-4e20-b4b4-482adf74fe79",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-12-15",
+    "end": "2025-01-26"
+  },
+  {
+    "id": "5dfd583e-dd74-463e-bd0e-6dd3898b57e0",
+    "title": "🌐 UI Components",
+    "status": "Todo",
+    "priority": "Urgent",
+    "lead": "656a7e31-7dd5-46ab-96d5-414038a15b53",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2025-01-13",
+    "end": "2025-02-27"
+  },
+  {
+    "id": "66927ccf-31bc-476a-955e-64bf213c0cd0",
+    "title": "📊 API Integration",
+    "status": "Completed",
+    "priority": "Low",
+    "lead": "87ba714b-1805-4313-b64a-e69e3981dab4",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2025-01-24",
+    "end": "2025-03-02"
+  },
+  {
+    "id": "233e9faf-380f-45f6-b528-6feca7f5dcab",
+    "title": "📊 Dashboard Design",
+    "status": "Completed",
+    "priority": "Low",
+    "lead": "acbc3020-424e-46d1-a505-95f61045750a",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-12-17",
+    "end": "2025-01-07"
+  },
+  {
+    "id": "3f6efafa-9902-4b0c-a019-6d053403bd2f",
+    "title": "📊 API Integration",
+    "status": "Todo",
+    "priority": "High",
+    "lead": "7ccb92e9-59b7-4e20-b4b4-482adf74fe79",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-12-02",
+    "end": "2024-12-20"
+  },
+  {
+    "id": "95a93000-c928-45fd-8b56-1d430a05bd35",
+    "title": "🌐 Notifications System",
+    "status": "Backlog",
+    "priority": "No",
+    "lead": "307e2e09-50a1-4495-9ca6-ecee1768d259",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-11-24",
+    "end": "2024-12-04"
+  },
+  {
+    "id": "75ce53d0-df5a-4792-9928-0a79f608d806",
+    "title": "📈 API Integration",
+    "status": "Backlog",
+    "priority": "High",
+    "lead": "4dbd1b73-9797-4aad-b2f0-a991c68f6d01",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-11-12",
+    "end": "2024-12-04"
+  },
+  {
+    "id": "94fcbedf-2deb-4e52-a068-11bdeb227318",
+    "title": "🔧 Task View",
+    "status": "Backlog",
+    "priority": "High",
+    "lead": "85752106-26e9-4e4e-94a9-dad066cfd751",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-11-21",
+    "end": "2025-02-15"
+  },
+  {
+    "id": "fe667147-e938-4a17-92e6-45812fd1b50b",
+    "title": "📈 Authentication Service",
+    "status": "Backlog",
+    "priority": "High",
+    "lead": "68c1b596-7e35-407d-bf6e-059b22766d59",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-11-09",
+    "end": "2025-03-03"
+  },
+  {
+    "id": "6da0df37-5ed3-4082-a6d7-78818c8807ae",
+    "title": "📊 WebSocket Integration",
+    "status": "Todo",
+    "priority": "High",
+    "lead": "c1d4b8bf-124f-46b7-b421-692ac2a3383e",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2025-01-30",
+    "end": "2025-02-14"
+  },
+  {
+    "id": "86120f0f-01a7-415d-bb56-a77ea1c5c0ee",
+    "title": "🌐 Dashboard Design",
+    "status": "Todo",
+    "priority": "Low",
+    "lead": "4dbd1b73-9797-4aad-b2f0-a991c68f6d01",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-11-11",
+    "end": "2025-01-23"
+  },
+  {
+    "id": "5774b0b5-cf28-4c33-81f3-b9a95f18053b",
+    "title": "📱 Performance Optimization",
+    "status": "In Progress",
+    "priority": "Medium",
+    "lead": "3b952ceb-0ab1-4b2b-9efc-4d578f0d838a",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-12-22",
+    "end": "2025-02-21"
+  },
+  {
+    "id": "66a26394-779b-4543-876b-6e4436ca9cd5",
+    "title": "📈 API Integration",
+    "status": "Backlog",
+    "priority": "No",
+    "lead": "f7d01ed5-9bd8-467c-9922-f9b9536caf9f",
+    "team": "80c322ca-e7ac-4b4e-822e-db6d1983b8e2",
+    "start": "2024-11-23",
+    "end": "2024-12-22"
+  }
+]

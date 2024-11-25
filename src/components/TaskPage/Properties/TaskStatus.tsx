@@ -11,7 +11,7 @@ export interface ITaskStatusProps {
 const statusIcon = (status: string, size: number) => {
   if (status === 'Backlog') {
     return <Selection className="text-gray-400" size={size} weight="bold" />
-  } else if (status === 'To Do') {
+  } else if (status === 'Todo') {
     return <Square className="text-orange-400" size={size} weight="bold" />
   } else if (status === 'In Progress') {
     return <MinusSquare className="text-blue-600" size={size} weight="bold" />;

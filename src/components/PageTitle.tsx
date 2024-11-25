@@ -38,10 +38,10 @@ export default function PageTitle ({ setSidebarOpen }: IPageTitleProps) {
   }
 
   return (
-    <div className="text-sm font-medium px-4 md:px-8 py-3 border-b text-zinc-700 flex justify-between">
-      <div className='flex gap-2 items-center'>
+    <div className="text-sm font-medium px-6 py-3 border-b text-zinc-700 flex justify-between">
+      <div className='flex gap-1 items-center'>
         <div className='flex lg:hidden items-center'>
-          <Button className="hover:bg-zinc-100 p-1 text-xs font-light text-zinc-500 rounded flex"
+          <Button className="px-1 hover:bg-zinc-100 text-xs font-light text-zinc-700 rounded flex"
             onClick={setSidebarOpen}>
             <Sidebar size={16} weight="bold" />
           </Button>

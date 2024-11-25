@@ -1,15 +1,14 @@
 
-import data from '../data/tasks.json';
+import data from '../data/users.json';
 
-const getTasks = async () => {
+const getUsers = async () => {
   const response = await data;
-  // console.log(response);
   return response;
 }
 
-const getTaskById = async (id: string) => {
+const getUserById = async (id: string) => {
   try {
-    const response = await data.find((task: any) => task.id === id);
+    const response = await data.find((user: any) => user.id === id);
     return response;
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -29,4 +28,4 @@ const remove = async (id: string) => {
   console.log('remove', id);
 }
 
-export default { getTasks, getTaskById, create, update, remove }
+export default { getUsers, getUserById, create, update, remove }
