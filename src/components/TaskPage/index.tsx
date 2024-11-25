@@ -1,20 +1,20 @@
-import KanbanBoard from './Kanban';
+// import KanbanBoard from './Kanban';
 import FilterBar from '../FilterBar';
-import { ITask, User } from '@/lib/types';
+// import { ITask } from '@/lib/types';
 import { Suspense, useState } from 'react';
 import TaskTableVirtualized from './List/TaskTableVirtualized';
 import { useAppSelector } from '@/store';
 import { sortByStatus } from '@/hooks/sortTasks';
 
 export interface ITaskPageProps {
-  tasks: Array<{
-    title: string;
-    value: string;
-    tasks: ITask[];
-  }>;
+  // tasks: Array<{
+  //   title: string;
+  //   value: string;
+  //   tasks: ITask[];
+  // }>;
 }
 
-export function TaskPage ({ tasks }: ITaskPageProps) {
+export function TaskPage ( _props : ITaskPageProps) {
   const [displayState, setDisplayState] = useState(1);
   const taskArray = useAppSelector((state) => state.tasks.tasks);
 
@@ -30,7 +30,7 @@ export function TaskPage ({ tasks }: ITaskPageProps) {
         //   ? <KanbanBoard columns={tasks} />
         //   :
             <Suspense fallback={<div>Loading Task List...</div>}>
-              <TaskTableVirtualized data={sortedTasks} />
+              {displayState === 1 && <TaskTableVirtualized data={sortedTasks} /> }
             </Suspense>
             
       }

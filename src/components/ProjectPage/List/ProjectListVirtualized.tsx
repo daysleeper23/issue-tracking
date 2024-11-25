@@ -1,6 +1,6 @@
 import { Project } from '@/lib/types';
 import { useVirtualizer } from '@tanstack/react-virtual';
-import { Suspense, useRef } from 'react';
+import { useRef } from 'react';
 import ProjectRow from './ProjectRow';
 
 export interface IProjectListVirtualizedProps {

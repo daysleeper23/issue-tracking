@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import tasksService from '../../services/tasks';
 import { ITask } from '@/lib/types';
-import { TaskAction, TaskState, SET_TASKS } from '../types/taskTypes';
+import { TaskState } from '../types/taskTypes';
 import { AppDispatch } from '..';
 
 const initialState: TaskState = {

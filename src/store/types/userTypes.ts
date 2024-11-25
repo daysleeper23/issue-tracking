@@ -1,4 +1,4 @@
-import { User } from "@/lib/types";
+// import { User } from "@/lib/types";
 
 export interface UserState {
   data: Array<{

@@ -1,4 +1,4 @@
-import { Route, Routes, useMatch } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { TaskPage } from './components/TaskPage'
 import ProjectPage from './components/ProjectPage'
 import SprintPage from './components/SprintPage'
@@ -8,13 +8,12 @@ import MyTasksPage from './components/MyTasksPage'
 import DraftsPage from './components/DraftsPage'
 import TeamsPage from './components/TeamsPage'
 
-import { Suspense, useEffect, useState } from 'react'
-import tasksService from './services/tasks'
-import { ITask } from './lib/types'
+import { useEffect, useState } from 'react'
+// import { ITask } from './lib/types'
 import PageTitle from './components/PageTitle'
 import TaskDetailPage from './components/TaskPage/TaskDetailPage'
 import ErrorBoundary from './components/ErrorBoundary'
-import { useAppDispatch, useAppSelector } from './store'
+import { useAppDispatch } from './store'
 import { initializeTasks } from './store/reducers/tasksReducer'
 import { initializeUsers } from './store/reducers/usersReducer'
 import { initializeProjects } from './store/reducers/projectsReducer'
@@ -23,14 +22,14 @@ function App() {
   const dispatch = useAppDispatch();
 
   const [sidebarVisibility, setSidebarVisibility] = useState(false);
-  const [tasks, setTasks] = useState<{ title: string; value: string; tasks: ITask[] }[]>([
-    { title: 'Backlog', value: 'Backlog', tasks: [] },
-    { title: 'To Do', value: 'Todo', tasks: [] },
-    { title: 'In Progress', value: 'In Progress', tasks: [] },
-    { title: 'Review', value: 'Review', tasks: [] },
-    { title: 'Completed', value: 'Completed', tasks: [] },
-    { title: 'Canceled', value: 'Canceled', tasks: [] },
-  ]);
+  // const [tasks, setTasks] = useState<{ title: string; value: string; tasks: ITask[] }[]>([
+  //   { title: 'Backlog', value: 'Backlog', tasks: [] },
+  //   { title: 'To Do', value: 'Todo', tasks: [] },
+  //   { title: 'In Progress', value: 'In Progress', tasks: [] },
+  //   { title: 'Review', value: 'Review', tasks: [] },
+  //   { title: 'Completed', value: 'Completed', tasks: [] },
+  //   { title: 'Canceled', value: 'Canceled', tasks: [] },
+  // ]);
 
   useEffect (() => {
     // mapTask();
@@ -51,7 +50,6 @@ function App() {
   //   ];
   //   setTasks(columns) ;
   // }
-  ``
 
   const toggleSidebar = () => {
     setSidebarVisibility(!sidebarVisibility);
@@ -83,7 +81,7 @@ function App() {
           <Route path="/views" element={<TeamsPage />} />
           <Route path="/teams" element={<TeamsPage />} />
     
-          <Route path="/tasks" element={<TaskPage tasks={tasks}/>} />
+          <Route path="/tasks" element={<TaskPage />} />
           <Route path="/projects" element={<ProjectPage />} />
           <Route path="/sprints" element={<SprintPage />} />
         </Routes>

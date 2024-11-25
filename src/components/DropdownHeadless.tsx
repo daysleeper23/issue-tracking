@@ -1,6 +1,6 @@
 import { useAppSelector } from '@/store';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { CheckSquare, ArrowBendDownRight, MinusSquare, PlusSquare, Square, XSquare, Selection, ArrowSquareLeft, ArrowSquareUpLeft, ArrowSquareUp, Warning, ArrowSquareDownLeft, Check, Timer, CaretDown } from "@phosphor-icons/react";
+import { CheckSquare, MinusSquare, PlusSquare, Square, XSquare, Selection, ArrowSquareLeft, ArrowSquareUpLeft, ArrowSquareUp, Warning, ArrowSquareDownLeft, Check, Timer, CaretDown } from "@phosphor-icons/react";
 import clsx from 'clsx';
 import { useState } from 'react';
 
@@ -11,7 +11,7 @@ export interface IDropdownHeadlessProps {
   
 }
 
-export function DropdownHeadless ({ selected, type, buttonText }: IDropdownHeadlessProps) {
+export function DropdownHeadless ({ selected, type }: IDropdownHeadlessProps) {
   const [select, setSelect] = useState(selected);
 
   const iconSize = 16;

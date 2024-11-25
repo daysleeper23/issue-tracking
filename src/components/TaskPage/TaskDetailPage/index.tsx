@@ -6,7 +6,7 @@ import SprintElement from '../Properties/SprintElement';
 import { DropdownWithIcon } from '@/components/Dropdown';
 import { useAppSelector } from '@/store';
 import { useLocation } from 'react-router-dom';
-import { DropdownHeadless } from '@/components/DropdownHeadless';
+// import { DropdownHeadless } from '@/components/DropdownHeadless';
 
 export interface ITaskDetailPageProps {
 

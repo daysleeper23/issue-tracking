@@ -1,5 +1,5 @@
 // import { useState } from 'react';
-import { Project } from '@/lib/types';
+// import { Project } from '@/lib/types';
 import FilterBar from '../FilterBar';
 // import KanbanBoard from '../TaskPage/Kanban';
 import ProjectListVirtualized from './List/ProjectListVirtualized';

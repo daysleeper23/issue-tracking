@@ -6,32 +6,32 @@ const projectNames = [
   "WebSocket Integration", "Performance Optimization", "Testing Automation"
 ];
 
-const sprintTitles = [
-  "MVP Sprint 1", "MVP Sprint 2", "Beta Release Sprint", "Performance Sprint", 
-  "Bug Fixing Sprint", "User Feedback Sprint", "UI Optimization Sprint", 
-  "API Testing Sprint", "Cross-Platform Testing Sprint", "Final Release Sprint"
-];
+// const sprintTitles = [
+//   "MVP Sprint 1", "MVP Sprint 2", "Beta Release Sprint", "Performance Sprint", 
+//   "Bug Fixing Sprint", "User Feedback Sprint", "UI Optimization Sprint", 
+//   "API Testing Sprint", "Cross-Platform Testing Sprint", "Final Release Sprint"
+// ];
 
-const assigneeNames = [
-  "John Doe", "Jane Smith", "Emily Johnson", "Michael Brown", 
-  "Sarah Davis", "David Wilson", "Linda Martinez", "James Garcia", 
-  "Patricia Anderson", "Robert Thomas", "Jennifer Lee", "Charles Clark"
-];
+// const assigneeNames = [
+//   "John Doe", "Jane Smith", "Emily Johnson", "Michael Brown", 
+//   "Sarah Davis", "David Wilson", "Linda Martinez", "James Garcia", 
+//   "Patricia Anderson", "Robert Thomas", "Jennifer Lee", "Charles Clark"
+// ];
 
 const priorities = ["No", "Low", "Medium", "High", "Urgent"];
 export const statuses = ["Backlog", "Todo", "In Progress", "Review", "Completed", "Canceled"];
-const onlineStatuses = ["Online", "Offline", "Busy", "Away"];
+// const onlineStatuses = ["Online", "Offline", "Busy", "Away"];
 
 function getRandomItem(arr: string[]) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-function getRandomAvatar() {
-  const gender = Math.random() < 0.5 ? 'men' : 'women';
-  const number = Math.floor(Math.random() * 99) + 1;
-  return `https://randomuser.me/api/portraits/${gender}/${number}.jpg`;
+// function getRandomAvatar() {
+//   const gender = Math.random() < 0.5 ? 'men' : 'women';
+//   const number = Math.floor(Math.random() * 99) + 1;
+//   return `https://randomuser.me/api/portraits/${gender}/${number}.jpg`;
   
-}
+// }
 
 function generateRandomTask(id: number): ITask {
   const taskTitles = [
@@ -49,25 +49,15 @@ function generateRandomTask(id: number): ITask {
 
   return {
     id: `task-${id}`,
+    number: id,
     title: getRandomItem(taskTitles),
-    project: {
-      id: `project-${Math.floor(Math.random() * 1000)}`,
-      title: generateRandomProjectName()
-    },
-    sprint: {
-      id: `sprint-${Math.floor(Math.random() * 1000)}`,
-      title: getRandomItem(sprintTitles)
-    },
+    project:  `project-${Math.floor(Math.random() * 1000)}`,
+    sprint: `sprint-${Math.floor(Math.random() * 1000)}`,
     dueDate: new Date(Date.now() + Math.random() * 10000000000).toISOString().split('T')[0], // Random future date
     priority: getRandomItem(priorities),
     status: getRandomItem(statuses),
     estimate: Math.floor(Math.random() * 10) + 1, // Random estimate between 1 and 10 hours
-    assignee: {
-      id: `assignee-${Math.floor(Math.random() * 1000)}`,
-      name: getRandomItem(assigneeNames),
-      avatarUrl: getRandomAvatar(),
-      onlineStatus: getRandomItem(onlineStatuses)
-    }
+    assignee: `assignee-${Math.floor(Math.random() * 1000)}`,
   };
 }
 
