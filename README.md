@@ -15,3 +15,4 @@ An issue tracking app using Typescript & TailwindCSS
 | TaskDetailPage:                                           |               |
 | - Initial setup, layout & styling                         | 2 hrs         |
 | TaskTable: Fix responsive issues & polishing the UI       | 3 hrs         |
+| Dropdown: Component with usePortal, dynamic positioning   | 16 hrs        |

@@ -4,10 +4,10 @@ import TaskTitle from "../Properties/TaskTitle";
 import InteractiveButton from "../Properties/InteractiveButton";
 import DueDate from "../Properties/DueDate";
 import Priority from "../Properties/PriorityElement";
-import Estimate from "../Properties/EstimateElement";
+// import Estimate from "../Properties/EstimateElement";
 import SprintElement from "../Properties/SprintElement";
 import TaskStatus from "../Properties/TaskStatus";
-import ProjectElement from "../Properties/ProjectElement";
+// import ProjectElement from "../Properties/ProjectElement";
 import { Link } from "react-router-dom";
 import { DropdownWithIcon } from "@/components/Dropdown";
 
@@ -43,9 +43,12 @@ export default function Taskrow ({ task }: ITaskrowProps) {
         </div>
         <div className="flex flex-none gap-1">
           <div className="hidden md:flex pointer-events-auto">
-            <InteractiveButton style='board'>
+            {/* <InteractiveButton style='board'>
               <ProjectElement project={task.project} />
-            </InteractiveButton>
+            </InteractiveButton> */}
+            <DropdownWithIcon
+              selected={task.project} 
+              buttonText={true} type='project' />
           </div>
           <div className="hidden md:flex pointer-events-auto">
             <InteractiveButton style='board'>
@@ -53,9 +56,9 @@ export default function Taskrow ({ task }: ITaskrowProps) {
             </InteractiveButton>
           </div>
           <div className="hidden md:flex pointer-events-auto">
-            <InteractiveButton  style={propertyStyle}>
-              <Estimate estimate={task.estimate} />
-            </InteractiveButton>
+            <DropdownWithIcon
+              selected={task.estimate.toString()} 
+              buttonText={true} type='estimate' />
           </div>
     
           <div className="hidden md:flex pointer-events-auto">
@@ -63,11 +66,13 @@ export default function Taskrow ({ task }: ITaskrowProps) {
               <DueDate dueDate={task.dueDate} />
             </InteractiveButton>
           </div>
+
           <div className="pointer-events-auto">
             <DropdownWithIcon
               selected={task.assignee} 
               buttonText={false} type='assignee' />
           </div>
+
           {/* <div className="pointer-events-auto">
             <DropdownHeadless
               selected={task.assignee} 

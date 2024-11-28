@@ -55,22 +55,22 @@ export default function TaskDetailPage (_props: ITaskDetailPageProps) {
 
           {/* status */}
           <div className='flex gap-1'>
-            <DropdownWithIcon selected={task.status} buttonText={true} type='task-status' />
+            <DropdownWithIcon selected={task.status} buttonText={true} type='task-status' size={1} />
           </div>
 
           {/* priority */}
           <div className='flex gap-1'>
-            <DropdownWithIcon selected={task.priority} buttonText={true} type='priority' />
+            <DropdownWithIcon selected={task.priority} buttonText={true} type='priority' size={1}/>
           </div>
 
           {/* assignee */}
           <div className='flex gap-1'>
-            <DropdownWithIcon selected={task.assignee} buttonText={true} type='assignee' />
+            <DropdownWithIcon selected={task.assignee} buttonText={true} type='assignee' size={1} />
           </div>
 
           {/* estimate */}
           <div className='flex gap-1'>
-            <DropdownWithIcon selected={task.estimate.toString()} buttonText={true} type='estimate' />
+            <DropdownWithIcon selected={task.estimate.toString()} buttonText={true} type='estimate' size={1} />
           </div>
 
           {/* <div className='flex gap-1'>

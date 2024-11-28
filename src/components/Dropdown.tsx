@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { CheckSquare, MinusSquare, PlusSquare, Square, XSquare, Selection, ArrowSquareLeft, ArrowSquareUpLeft, ArrowSquareUp, Warning, ArrowSquareDownLeft, Check, Timer } from "@phosphor-icons/react";
-import clsx from "clsx";
 import { useAppSelector } from "@/store";
 import { createPortal } from "react-dom";
 
@@ -23,9 +22,10 @@ type DropdownElementProps = {
   iconSize: number;
   type: string;
   selected: boolean;
+  size: number;
 }
 
-const DropdownElement = ({ element, buttonText, iconSize, type, selected }: DropdownElementProps) => {
+const DropdownElement = ({ element, buttonText, iconSize, type, selected, size = 0 }: DropdownElementProps) => {
 
   const statusIcon = (value: string, size: number) => {
     if (value === 'Backlog') {
@@ -58,7 +58,7 @@ const DropdownElement = ({ element, buttonText, iconSize, type, selected }: Drop
     }
   }
 
-  const avatar = (url: string, status: string) => {
+  const userAvatar = (url: string, status: string) => {
   
     const onlineStatus = (status: string) => {
       if (status === 'Online') {
@@ -74,26 +74,61 @@ const DropdownElement = ({ element, buttonText, iconSize, type, selected }: Drop
     return (
       <div className="relative inline-block">
         <img className="w-4 h-4 rounded-full" src={url}></img>
-        <span className={`absolute -bottom-1 -right-1 block w-3 h-3 border-2 border-white rounded-full ${onlineStatus(status)}`}></span>
+        <span className={`absolute -bottom-1 -right-1 block w-2.5 h-2.5 border-2 border-white rounded-full ${onlineStatus(status)}`}></span>
+      </div>
+    )
+  }
+
+  // const sprintIcon = (status: string, size: number) => {
+  //   return (
+  //     <div className="w-5 h-5 flex items-center justify-center">
+  //       <CaretCircleDoubleRight size={16} weight="bold" />
+  //     </div>
+  //   )
+  // }
+
+  const projectIcon = (icon: string) => {
+    return (
+      <div className="w-5 h-5 flex items-center justify-center">
+        {icon}
       </div>
     )
   }
 
   return (
-    <div className={clsx(
-      "flex gap-2 items-center justify-between",
-      {
-        "w-4 h-4": buttonText === false,
-        "": buttonText === true
-      }
-      )}
+    <div className={
+      `flex items-center
+        ${buttonText === true 
+          ? 'justify-between'
+          : 'justify-center'
+        }
+        ${size === 0 ? 'gap-1' : 'gap-2'}
+      `}
     >
-      <div className="flex gap-2 items-center text-zinc-600">
-        {type === 'task-status' && statusIcon(element.value, iconSize)}
-        {type === 'priority' && priorityIcon(element.value, iconSize)}
-        {type === 'estimate' && <Timer size={iconSize} weight="bold" />}
-        {type === 'assignee' && avatar(element.url, element.status)}
-        <div className="flex-1 min-w-0 text-sm font-medium text-zinc-600 overflow-hidden text-ellipsis whitespace-nowrap antialiased">{buttonText && element.label}</div>
+      <div className={
+        `flex items-center text-zinc-600
+          ${size === 0 
+            ? 'gap-1' 
+            : 'gap-2'}
+        `
+      }>
+        <div className="w-5 h-5 flex items-center justify-center">
+          { type === 'task-status' && statusIcon(element.value, iconSize) }
+          { type === 'priority' && priorityIcon(element.value, iconSize) }
+          { type === 'estimate' && <Timer size={iconSize} weight="bold" /> }
+          {/* { type === 'sprint' && sprintIcon(element.status, iconSize )} */}
+          { type === 'project' && projectIcon(element.url) }
+          { type === 'assignee' && userAvatar(element.url, element.status) }
+        </div>
+        {buttonText && 
+          <div className={
+            `flex-1 min-w-0 text-zinc-500 overflow-hidden text-ellipsis whitespace-nowrap antialiased
+              ${size === 0 ? 'text-xs font-normal' : 'text-sm font-medium'}
+            `
+          }>
+            {element.label}
+          </div> 
+        }
       </div>
       {selected && 
         <div className="w-4">
@@ -108,9 +143,10 @@ export interface DropdownWithIconProps {
   selected: string;
   buttonText: boolean;
   type: string;
+  size?: number;
 }
 
-export const DropdownWithIcon = ({ selected, buttonText, type }: DropdownWithIconProps) => {
+export const DropdownWithIcon = ({ selected, buttonText, type, size = 0 }: DropdownWithIconProps) => {
   const [select, setSelect] = useState(selected);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -127,6 +163,11 @@ export const DropdownWithIcon = ({ selected, buttonText, type }: DropdownWithIco
   switch (type) {
     case 'assignee':
       list = useAppSelector(state => state.users.data);
+      break;
+    case 'project':
+      list = useAppSelector(state => state.projects.data).map(p => {
+        return { value: p.id, label: p.title.split(' ').splice(1).join(' '), url: p.title.split(' ')[0], status: '' };
+      });
       break;
     case 'task-status':
       list = ["Backlog", "Todo", "In Progress", "Review", "Completed", "Canceled"].map(s => {
@@ -260,11 +301,18 @@ export const DropdownWithIcon = ({ selected, buttonText, type }: DropdownWithIco
       <button 
         ref={buttonRef}
         id="dropdownButton" 
-        className={`btn btn-ghost btn-sm -ml-2 rounded border-0 items-center bg-white hover:bg-zinc-100 focus:outline-1 focus:outline-blue-500 ${
-          isOpen ? 'bg-zinc-100' : ''}
+        className={`rounded border-0 items-center bg-white hover:bg-zinc-100 focus:outline-1 focus:outline-blue-500 
+          ${isOpen ? 'bg-zinc-100' : ''}
+          ${size === 0 ? 'p-1' : 'btn btn-ghost btn-sm'}
         `}
         onClick={handleToggle}>
-        <DropdownElement element={list.find(l => l.value === select) || { value: '', label: '', url: '', status: '' }} buttonText={buttonText} iconSize={iconSize} type={type} selected={false} />
+        <DropdownElement 
+          element={list.find(l => l.value === select) || { value: '', label: '', url: '', status: '' }} 
+          buttonText={buttonText} 
+          iconSize={iconSize} 
+          type={type} 
+          selected={false} 
+          size={size}/>
       </button>
 
       {/* <!-- Dropdown Menu in Portal --> */}
@@ -295,7 +343,7 @@ export const DropdownWithIcon = ({ selected, buttonText, type }: DropdownWithIco
                   {
                     list.filter(v => v.label.toLowerCase().includes(search.toLowerCase())).map((s, index) =>
                       <div 
-                        className={`w-full p-2 rounded hover:bg-zinc-100 
+                        className={`w-full p-2 rounded
                           ${
                             index === activeIndex
                               ? "bg-zinc-100"
@@ -304,8 +352,15 @@ export const DropdownWithIcon = ({ selected, buttonText, type }: DropdownWithIco
                         `}
                         key={s.value} 
                         onClick={() => handleSelect(s.value)}
+                        onMouseEnter={() => setActiveIndex(index)}
                       >
-                        <DropdownElement element={s} buttonText={true} iconSize={iconSize} type={type} selected={s.value === select} />
+                        <DropdownElement 
+                          element={s} 
+                          buttonText={true} 
+                          iconSize={iconSize} 
+                          type={type} 
+                          selected={s.value === select}
+                          size={1} />
                       </div>
                     )
                   }
